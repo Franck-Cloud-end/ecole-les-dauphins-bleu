@@ -17,9 +17,6 @@ Allow: /css/
 Allow: /images/
 Allow: /js/
 
-# Bloquer le dossier FAMOSOS (projet séparé)
-Disallow: /FAMOSOS/
-
 # Sitemap
 Sitemap: https://franck-cloud-end.github.io/ecole-les-dauphins-bleu/sitemap.xml
 
