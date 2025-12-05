@@ -1,0 +1,28 @@
+# robots.txt pour Complexe Scolaire Privé Les Dauphins Bleus
+# https://franck-cloud-end.github.io/ecole-les-dauphins-bleu/robots.txt
+
+User-agent: *
+Allow: /
+
+# Autoriser l'indexation de toutes les pages principales
+Allow: /index.html
+Allow: /apropos.html
+Allow: /galerie.html
+Allow: /contact.html
+Allow: /politique.html
+Allow: /cgu.html
+
+# Autoriser l'indexation des ressources
+Allow: /css/
+Allow: /images/
+Allow: /js/
+
+# Bloquer le dossier FAMOSOS (projet séparé)
+Disallow: /FAMOSOS/
+
+# Sitemap
+Sitemap: https://franck-cloud-end.github.io/ecole-les-dauphins-bleu/sitemap.xml
+
+# Délai entre les requêtes (en secondes)
+Crawl-delay: 1
+

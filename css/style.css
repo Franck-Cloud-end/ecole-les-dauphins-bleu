@@ -896,10 +896,53 @@ ul li {
 
   .contact-container {
     flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .map-container {
+    height: 250px !important;
+    margin-top: 20px !important;
+  }
+
+  .contact-form,
+  .contact-info {
+    padding: 15px !important;
+  }
+
+  /* Footer optimisé pour tablette */
+  .site-footer {
+    padding: 30px 15px !important;
+  }
+
+  .footer-container {
+    gap: 20px !important;
   }
 
   .footer-logo-image {
-    height: 150px !important;
+    height: 120px !important;
+  }
+
+  .footer-heading {
+    font-size: 1.1em !important;
+    margin-bottom: 10px !important;
+  }
+
+  .tagline {
+    font-size: 1em !important;
+  }
+
+  .footer-link {
+    font-size: 0.9em !important;
+    margin-bottom: 6px !important;
+  }
+
+  .footer-bottom-text {
+    font-size: 0.85em !important;
+    margin-top: 15px !important;
+  }
+
+  .footer-divider {
+    margin: 20px 0 !important;
   }
 }
 
@@ -992,13 +1035,84 @@ ul li {
 
   .banner {
     font-size: 1.2em !important;
-    height: 250px !important;
+    height: 200px !important;
     padding: 0 10px !important;
   }
 
   .banner h1 {
-    font-size: 1.2em !important;
+    font-size: 1.1em !important;
     line-height: 1.3 !important;
+    padding: 0 5px !important;
+  }
+
+  /* Réduction des espacements des sections sur mobile */
+  .section {
+    padding: 25px 15px !important;
+  }
+
+  .about-section {
+    padding: 30px 15px !important;
+  }
+
+  .about-container {
+    gap: 20px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .gallery-section {
+    padding: 15px 0 30px 0 !important;
+  }
+
+  .galerie-title {
+    font-size: 1.8em !important;
+    margin: 20px 0 15px 0 !important;
+  }
+
+  .contact-section {
+    padding: 15px 10px !important;
+  }
+
+  .contact-title {
+    font-size: 1.8em !important;
+    margin-bottom: 20px !important;
+  }
+
+  .map-container {
+    height: 200px !important;
+    margin-top: 15px !important;
+  }
+
+  .contact-form,
+  .contact-info {
+    padding: 15px !important;
+  }
+
+  main {
+    padding: 0 15px 30px 15px !important;
+  }
+
+  .content-two-col {
+    gap: 20px !important;
+    margin-bottom: 30px !important;
+  }
+
+  section h2 {
+    font-size: 1.5em !important;
+    margin-bottom: 15px !important;
+  }
+
+  .valeurs-section {
+    margin: 30px 0 !important;
+  }
+
+  .valeurs-section h2 {
+    font-size: 1.6em !important;
+    margin-bottom: 20px !important;
+  }
+
+  .team-container {
+    gap: 15px !important;
+    margin-top: 20px !important;
   }
 
   .team-member {
@@ -1012,5 +1126,76 @@ ul li {
 
   .about-image img {
     max-width: 100% !important;
+  }
+
+  /* Footer ultra-compact pour mobile */
+  .site-footer {
+    padding: 20px 10px 15px 10px !important;
+  }
+
+  .footer-container {
+    gap: 15px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .footer-col {
+    width: 100% !important;
+    min-width: 100% !important;
+    padding: 0 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .footer-logo {
+    margin-bottom: 5px !important;
+  }
+
+  .footer-logo-image {
+    height: 80px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .tagline {
+    font-size: 0.9em !important;
+    margin-top: 5px !important;
+  }
+
+  .footer-heading {
+    font-size: 1em !important;
+    margin-bottom: 8px !important;
+    margin-top: 5px !important;
+  }
+
+  .footer-list {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .footer-link {
+    font-size: 0.85em !important;
+    margin-bottom: 4px !important;
+    padding: 2px 0 !important;
+  }
+
+  .footer-contact {
+    font-size: 0.9em !important;
+  }
+
+  .contact-item {
+    font-size: 0.85em !important;
+    margin: 5px 0 !important;
+    line-height: 1.4 !important;
+  }
+
+  .footer-divider {
+    margin: 15px 0 10px 0 !important;
+    border-top-width: 1px !important;
+  }
+
+  .footer-bottom-text {
+    font-size: 0.75em !important;
+    margin-top: 5px !important;
+    padding: 0 5px !important;
+    line-height: 1.3 !important;
   }
 }
