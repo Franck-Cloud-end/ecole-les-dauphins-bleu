@@ -854,18 +854,72 @@ ul li {
 }
 
 @media (max-width: 480px) {
-  .menu-principal {
+  /* En-tête mobile : logo centré, titre dessous, liens horizontaux */
+  .banniere {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 12px;
   }
 
-  .menu-principal a {
-    width: 100%;
-    text-align: center;
+  .banniere .logo:first-child {
+    display: block;
+    order: 1;
+  }
+
+  .banniere .logo:last-child {
+    display: none; /* masquer le 2e logo sur mobile */
   }
 
   .logo-image {
-    height: 70px;
+    height: 60px;
+    width: auto;
+  }
+
+  .banniere .centre {
+    order: 2;
+    text-align: center;
+  }
+
+  .banniere .centre h1 {
+    font-size: 0.9em;
+    margin: 4px 0 0 0;
+    line-height: 1.05;
+  }
+
+  /* Menu links : affichage horizontal */
+  .menu-principal {
+    order: 3;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 6px;
+    margin-top: 4px;
+    padding: 6px 0;
+    flex-wrap: wrap;
+  }
+
+  .menu-principal a {
+    display: inline-block;
+    width: auto;
+    padding: 5px 10px;
+    font-size: 0.85em;
+    border-radius: 999px;
+    color: white;
+    background: transparent;
+    text-align: center;
+  }
+
+  .menu-principal a.is-active {
+    background: white;
+    color: #004080;
+    font-weight: bold;
+  }
+
+  .menu-principal a:hover {
+    background: rgba(255, 255, 255, 0.15);
   }
 
   .banner {
