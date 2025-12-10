@@ -12,11 +12,11 @@
     </title>
     <meta
       name="description"
-      content="Complexe Scolaire Privé Les Dauphins Bleus à Niamey, Niger. École privée d'excellence offrant un enseignement de qualité de la maternelle au Collège. Inscription ouverte. Contactez-nous au +227 94 55 94 30."
+      content="Complexe Scolaire Privé Les Dauphins Bleus à Niamey, Niger. École privée d'excellence de la maternelle au collège, enseignement de qualité, suivi personnalisé. Inscription ouverte. Contactez-nous au +227 94 55 94 30."
     />
     <meta
       name="keywords"
-      content="école privée Niamey, école primaire Niger, Complexe Scolaire Les Dauphins Bleus, école maternelle Niamey, inscription école Niamey, école privée Banifandou, enseignement qualité Niger, école primaire privée"
+      content="école privée Niamey, école maternelle Niamey, école primaire Niger, collège Niamey, Complexe Scolaire Les Dauphins Bleus, inscription école Niamey, enseignement qualité Niger, école privée Banifandou"
     />
     <meta name="author" content="Complexe Scolaire Privé Les Dauphins Bleus" />
     <meta name="robots" content="index, follow" />
@@ -123,7 +123,7 @@
       <div class="about-container">
         <div class="about-image">
           <img
-            src="images/qui-sommes-nous.png"
+            src="images/Accueil/qui-sommes-nous.png"
             alt="Élèves heureux"
             loading="lazy"
             width="400"
@@ -158,20 +158,20 @@
           <div class="point">
             <div class="image-container">
               <img
-                src="images/enseignant1.jpg"
+                src="images/Accueil/enseignant1.jpg"
                 alt="Enseignant"
                 width="300"
                 height="200"
               />
               <img
-                src="images/enseignant2.jpg"
+                src="images/Accueil/enseignant2.jpg"
                 alt="Enseignant"
                 width="300"
                 height="200"
                 loading="lazy"
               />
               <img
-                src="images/enseignant3.jpg"
+                src="images/Accueil/enseignant3.jpg"
                 alt="Enseignant"
                 width="300"
                 height="200"
@@ -187,21 +187,21 @@
           <div class="point">
             <div class="image-container">
               <img
-                src="images/infrastructure1.jpg"
+                src="images/Accueil/infrastructure1.jpg"
                 alt="Infrastructure"
                 width="300"
                 height="200"
                 loading="lazy"
               />
               <img
-                src="images/infrastructure2.jpg"
+                src="images/Accueil/infrastructure2.jpg"
                 alt="Infrastructure"
                 width="300"
                 height="200"
                 loading="lazy"
               />
               <img
-                src="images/infrastructure3.jpg"
+                src="images/Accueil/infrastructure3.jpg"
                 alt="Infrastructure"
                 width="300"
                 height="200"
@@ -217,21 +217,21 @@
           <div class="point">
             <div class="image-container">
               <img
-                src="images/activite1.jpg"
+                src="images/Accueil/activite1.jpg"
                 alt="Activité"
                 width="300"
                 height="200"
                 loading="lazy"
               />
               <img
-                src="images/activite2.jpg"
+                src="images/Accueil/activite2.jpg"
                 alt="Activité"
                 width="300"
                 height="200"
                 loading="lazy"
               />
               <img
-                src="images/activite3.jpg"
+                src="images/Accueil/activite3.jpg"
                 alt="Activité"
                 width="300"
                 height="200"
@@ -501,6 +501,108 @@
           ]
         }
       }
+    </script>
+
+    <script>
+      // Définition de la galerie de photos
+      const PHOTOS_VIE_CLASSE = [
+        "images/gal1.jpg", // Index 0
+        "images/gal3.jpg", // Index 1
+        "images/gal4.jpg", // Index 2
+      ];
+
+      // Références aux éléments du DOM
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = document.getElementById("lightbox-image");
+      const btnFermer = document.querySelector(".lightbox-fermer");
+      const btnPrev = document.querySelector(".lightbox-prev");
+      const btnNext = document.querySelector(".lightbox-next");
+      const cadres = document.querySelectorAll(".cadre-lightbox");
+
+      let currentGallery = [];
+      let currentIndex = 0;
+
+      // --- Fonctions de base ---
+
+      // Ouvre la Lightbox
+      function openLightbox(gallery, index) {
+        currentGallery = gallery;
+        currentIndex = index;
+        updateLightboxImage();
+        lightbox.classList.remove("lightbox-cachee");
+      }
+
+      // Ferme la Lightbox
+      function closeLightbox() {
+        lightbox.classList.add("lightbox-cachee");
+      }
+
+      // Met à jour l'image affichée
+      function updateLightboxImage() {
+        lightboxImage.src = currentGallery[currentIndex];
+      }
+
+      // Change de photo (direction = 1 pour Suivant, -1 pour Précédent)
+      function changePhoto(direction) {
+        let newIndex = currentIndex + direction;
+
+        if (newIndex >= currentGallery.length) {
+          newIndex = 0; // Boucle au début (revient à la première photo)
+        } else if (newIndex < 0) {
+          newIndex = currentGallery.length - 1; // Boucle à la fin (revient à la dernière photo)
+        }
+
+        currentIndex = newIndex;
+        updateLightboxImage();
+      }
+
+      // --- Écouteurs d'événements ---
+
+      // 1. Clic sur un cadre
+      cadres.forEach((cadre) => {
+        cadre.addEventListener("click", function () {
+          const galleryKey = this.getAttribute("data-gallery"); // Récupère 'vie_classe'
+          const index = parseInt(this.getAttribute("data-index")); // Récupère 0, 1 ou 2
+
+          // On vérifie de quelle galerie il s'agit pour utiliser la bonne liste de photos
+          if (galleryKey === "vie_classe") {
+            openLightbox(PHOTOS_VIE_CLASSE, index);
+          }
+        });
+      });
+
+      // 2. Clic sur les boutons de navigation
+      btnPrev.addEventListener("click", () => changePhoto(-1));
+      btnNext.addEventListener("click", () => changePhoto(1));
+
+      // 3. Clic pour fermer (bouton X)
+      btnFermer.addEventListener("click", closeLightbox);
+
+      // 4. Clic en dehors de l'image (sur le fond noir de la Lightbox)
+      lightbox.addEventListener("click", function (e) {
+        // Si l'élément cliqué est l'arrière-plan de la lightbox (l'élément #lightbox lui-même)
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      // 5. Appui sur la touche ÉCHAP pour fermer
+      document.addEventListener("keydown", function (e) {
+        if (
+          e.key === "Escape" &&
+          !lightbox.classList.contains("lightbox-cachee")
+        ) {
+          closeLightbox();
+        }
+        // Gérer les flèches du clavier pour la navigation (Gauche/Droite)
+        if (!lightbox.classList.contains("lightbox-cachee")) {
+          if (e.key === "ArrowLeft") {
+            changePhoto(-1);
+          } else if (e.key === "ArrowRight") {
+            changePhoto(1);
+          }
+        }
+      });
     </script>
   </body>
 </html>
